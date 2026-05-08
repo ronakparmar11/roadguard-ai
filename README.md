@@ -1,8 +1,8 @@
 # RoadGuard AI — Intelligent Pothole Detection & Road Surface Monitoring
 
-An end-to-end computer vision system for real-time pothole detection from road images and videos using YOLOv8, FastAPI, React, and OpenCV.
+An end-to-end computer vision system for **real-time pothole detection** from road images and videos using **YOLOv8, FastAPI, React, and OpenCV**.
 
-The system automatically detects potholes, localizes them with bounding boxes, processes both images and videos, and provides an interactive web dashboard for visualization and performance monitoring.
+The system automatically detects potholes, localizes them with bounding boxes, processes both images and videos, and provides an interactive web dashboard for visualization, inference monitoring, and performance analysis.
 
 ---
 
@@ -16,6 +16,10 @@ The system automatically detects potholes, localizes them with bounding boxes, p
 
 ![Demo](docs/Demo_img.png)
 
+## Performance Analysis
+
+![Performance](docs/SystemPerformanceAnalysis.png)
+
 ---
 
 # Features
@@ -27,7 +31,7 @@ The system automatically detects potholes, localizes them with bounding boxes, p
 * Secure REST API with API-key authentication
 * Bounding box visualization
 * Detection confidence scores
-* Performance metrics
+* Inference performance metrics
 * CPU and GPU support
 * Modular full-stack architecture
 
@@ -35,11 +39,12 @@ The system automatically detects potholes, localizes them with bounding boxes, p
 
 # Problem Statement
 
-Manual road inspection is:
+Traditional road inspection methods are:
 
 * Time consuming
 * Expensive
 * Difficult to scale
+* Human dependent
 * Subjective
 
 RoadGuard AI automates pothole detection using computer vision and deep learning for:
@@ -48,6 +53,7 @@ RoadGuard AI automates pothole detection using computer vision and deep learning
 * Municipal maintenance planning
 * Fleet-based road inspection
 * Autonomous vehicle perception
+* Infrastructure analytics
 
 ---
 
@@ -91,15 +97,15 @@ React Frontend
     ↓
 FastAPI Backend
     ↓
-Authentication
+API Authentication
     ↓
 Image / Video Decoding
     ↓
 YOLOv8 Inference
     ↓
-NMS Filtering
+Non-Maximum Suppression
     ↓
-JSON / Video Output
+JSON / Video Response
     ↓
 Bounding Box Visualization
 ```
@@ -112,11 +118,12 @@ Bounding Box Visualization
 roadguard-ai/
 │
 ├── docs/
+├── images/
 ├── models/
 ├── training/
 ├── inference/
 ├── web/
-├── images/
+├── app/
 │
 ├── requirements.txt
 ├── dockerfile
@@ -128,7 +135,7 @@ roadguard-ai/
 
 # Model Training
 
-YOLOv8 was fine-tuned using transfer learning.
+YOLOv8 was fine-tuned using transfer learning on a custom pothole detection dataset.
 
 Training configuration:
 
@@ -178,7 +185,7 @@ Frontend visualization
 ```text
 Upload video
 ↓
-OpenCV frame extraction
+Frame extraction
 ↓
 Frame-by-frame detection
 ↓
@@ -195,20 +202,20 @@ Browser-compatible MP4
 
 # Installation
 
-## Clone repository
+## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/roadguard-ai.git
+git clone https://github.com/ronakparmar11/roadguard-ai.git
 cd roadguard-ai
 ```
 
-## Install backend dependencies
+## Install Backend Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Install frontend dependencies
+## Install Frontend Dependencies
 
 ```bash
 cd web
@@ -240,7 +247,7 @@ Backend:
 http://127.0.0.1:8001
 ```
 
-Swagger:
+Swagger API Docs:
 
 ```text
 http://127.0.0.1:8001/docs
@@ -338,7 +345,7 @@ POST /detect-video
 
 # Author
 
-Ronak Parmar
+**Ronak Parmar**
 
 Computer Vision | Machine Learning | Full Stack Development
 
@@ -346,4 +353,4 @@ Computer Vision | Machine Learning | Full Stack Development
 
 # License
 
-MIT License
+This project is licensed under the MIT License.
