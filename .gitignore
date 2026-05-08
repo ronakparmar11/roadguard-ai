@@ -1,0 +1,28 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Models
+*.pt
+
+# Videos
+*.mp4
+*.avi
+
+# Node
+node_modules/
+dist/
+
+# YOLO
+runs/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
